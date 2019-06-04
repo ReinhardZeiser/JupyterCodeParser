@@ -1,6 +1,6 @@
 import json
 
-def parse(path):
+def parse(path, outputfile):
     with open(path) as f:
         ipynb = json.load(f)
     py_cells = [item['source'] for item in ipynb['cells'] if item['cell_type']=='code' ]
@@ -8,11 +8,13 @@ def parse(path):
     for cell in py_cells:
         for x in cell:
             code.append(x)
-    tmp_code_path = 'code_tmp.py'
-    with open(tmp_code_path, 'w') as f:
-        for line in code:
-            if line.startswith('%') or \
-                line.startswith('help('):
-                continue
-            f.write(line + '\n')
-    return tmp_code_path
+
+    code_string = ''
+    for line in code:
+        if line.startswith('%') or \
+            line.startswith('help('):
+            continue
+        code_string += line + '\n'
+    with open(outputfile, 'w') as f:
+        f.write(code_string)
+    return outputfile
