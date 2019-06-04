@@ -21,7 +21,7 @@ python3 parse_ipynb.py [PATH_TO_IPYNB]
 ```
 For optional arguments use -h
 ## run_ipynb
-Invokes parse_ipynb and runs extracted code.
+Invokes parse_ipynb to extract sourcecode from ipynb file and runs extracted code afterwards.
 #### Usage 
 ```bash
 python3 run_ipynb.py [PATH_TO_IPYNB]
