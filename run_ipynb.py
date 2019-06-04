@@ -1,9 +1,19 @@
-from parse_ipynb import parse as load_ipynb_code
+import parse_ipynb
 import subprocess
 import argparse
 
-def run(ipynb_path, outputfile, python_cmd):
-    code_path = load_ipynb_code(ipynb_path, outputfile)
+def run_ipynb(ipynb_path, outputfile=None, python_cmd='python'):
+    ''' 
+        Invokes parse_ipynb and calls python with subprocess on extraced file
+        Arguments:
+            ipynb_path: path to .ipynb file
+            outputfile: absolute path for surcecode-file, if None ipynb 
+                        filename and dir will be used
+            python_cmd: cli command to run python code, defaults to python
+        Returns:
+            /
+    ''' 
+    code_path = parse_ipynb.parse(ipynb_path, outputfile)
     subprocess.run([python_cmd, code_path])
 
 if __name__ == '__main__':
@@ -15,4 +25,4 @@ if __name__ == '__main__':
     ipynb_path = args.path
     outputfile = args.outputfile
     python_cmd = args.python_command
-    run(ipynb_path, outputfile, python_cmd)
+    run_ipynb(ipynb_path, outputfile, python_cmd)
