@@ -68,4 +68,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     ipynb_path = args.path
     outputfile = args.outputfile
-    parse_ipynb(ipynb_path, outputfile)
+    parse(ipynb_path, outputfile)
