@@ -30,5 +30,5 @@ For optional arguments use -h
 
 ### TODOS
 - [ ] also convert to html, pdf
-- [ ] add markdown-cell above of code-cell as docstring  
+- [ ] add markdown-cell above of code-cell as comment  
 - [ ] automatic multiprocessing (Workpool) of functions in for-loop if multiprocessing argument is enabled  
