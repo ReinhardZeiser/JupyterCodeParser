@@ -2,7 +2,7 @@
 Simple module to extract/run code written in a Jupyter Notebook.  
   
 **Usecase:** 
-- extracting code after prototyping in Jupyter, suing *# omit cell* to only extract necessary code
+- extracting code after prototyping in Jupyter, using *# omit cell* to only extract necessary code
 
 ## parse_ipynb
 Parses code from Jupyter file (\*.ipynb) and writes it to outputfile.  
